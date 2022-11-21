@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm Bored!</title>
+    <script src="index.js"></script>
+    <script src="modal.js"></script>
+    <script>
+        addEventListener("load", (event) => {
+            btnPressed();
+        });
+
+        function closeModal() {
+            let modal = document.getElementById("popupModal");
+            modal.classList.remove('is-active');
+        }
+
+    </script>
+    <link rel="stylesheet" href="./style.css" type="text/css">
+
+</head>
+
+<body>
+    <section class="section">
+        <h1 class="title backer">I'm Bored!</h1>
+
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-half">
+                    <div class="card hidden" id="card">
+                        <header class="card-header">
+                            <p class="card-header-title" id="cardTitle">
+                                Activity Name
+                            </p>
+                        </header>
+                        <div class="card-content">
+                            <div class="content">
+                                <div class="block">
+
+                                    <div class="tooltip">
+                                        participants:
+                                        <span class="tooltiptext">The number of people that this activity could
+                                            involve</span>
+                                    </div>
+                                    <span id="participants"></span>
+                                    </br>
+
+                                    <div class="tooltip">
+                                        price:
+                                        <span class="tooltiptext">The cost of the event with zero being free</span>
+                                    </div>
+                                    <span id="price"></span>
+                                    </br>
+
+                                    <div class="tooltip">
+                                        accessibility score:
+                                        <span class="tooltiptext">How possible an event is to do with zero being the
+                                            most accessible</span>
+                                    </div>
+                                    <span id="accessibility"></span>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <span class="tag is-rounded is-info activityTag" id="activityType">activity type</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="btnContainer container has-text-centered">
+                <button class="button is-primary is-responsive is-medium" onclick="btnPressed()">Find New
+                    Activity</button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                Built by <a href="https://github.com/Zed-Bailey">Zed</a> with <strong><a
+                        href="https://bulma.io/">Bulma</a></strong> and <strong><a
+                        href="https://www.boredapi.com/">Bored API</a></strong>
+            </p>
+        </div>
+    </footer>
+
+    <div id="popupModal" class="modal is-active">
+        <div class="modal-background"></div>
+
+
+        <div class="modal-content">
+            <div class="box">
+                <p>
+                    Are you Bored? Do you want something to do?</br>
+                    Use this free app to quickly find an activity that you can do!
+                </p>
+
+                <div class="columns">
+                    <div class="column ">
+                        <button class="button is-text" onclick="closeModal()">Ok!</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+
+</body>
+
+</html>
